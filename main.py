@@ -26,6 +26,7 @@ db.session.commit()
 
 # Read a particular record by Query #
 book = Book.query.filter_by(title="Harry Porter").first()
+print(book)
 
 # Update a record by Primary_Key #
 book_id = 1
@@ -33,11 +34,11 @@ book_to_update = Book.query.get(book_id)
 book_to_update.title = "Harry Porter and the Globet of Fire"
 db.session.commit()
 
-# Delete a particular record by Primyar Key #
+# Delete a particular record by Primary Key #
 book_id = 1
-book_to_delete = Book.query.delete(book_id)
+book_to_delete = Book.query.get(book_id)
 db.session.delete(book_to_delete)
-db.session.committ()
+db.session.commit()
 
 # Read all records #
 all_books = db.session.query(Book).all()
