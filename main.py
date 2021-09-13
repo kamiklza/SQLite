@@ -39,7 +39,7 @@ book_to_delete = Book.query.delete(book_id)
 db.session.delete(book_to_delete)
 db.session.committ()
 
-
+# Read all records #
 all_books = db.session.query(Book).all()
 print(all_books)
 
